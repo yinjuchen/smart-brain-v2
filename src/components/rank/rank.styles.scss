@@ -1,0 +1,17 @@
+.rank-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px;
+
+  
+  .rank-text {
+    font-size: 18px;
+    color: black;
+  
+  }
+  .rank-number {
+    font-size: 20px;
+  }
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Navigation from './routes/navigation/navigation.component';
+import Home from './routes/home/home.component';
+import SignIn from './routes/sign-in/sign-in.component';
+import Register from './routes/register/register.component';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Authentication from './routes/authentication/authentication.component';
+// import Clarifai from 'clarifai'
+// import { useEffect } from 'react';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path='/' element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path='auth' element={<Authentication />} />
+        </Route>
+      </Routes>
     </div>
-  );
+
+  )
 }
 
 export default App;
